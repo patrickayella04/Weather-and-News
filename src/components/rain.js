@@ -5,7 +5,11 @@ const RainMore = () => {
     return (
         
     <Fragment>
-        <Rain />
+        <img src={Rain}
+            
+            alt="loading..."
+            style={{ width: '100px', height: '100px' }}
+            className="mainImg"/>
     </Fragment>
         
     )

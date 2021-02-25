@@ -1,5 +1,5 @@
 import React from 'react';
-// import Rain from './rain';
+import Rain from './rain';
 
 
 const DisplayWeather = (props) => {
@@ -24,12 +24,16 @@ const DisplayWeather = (props) => {
 
                     <div className="col-md-9">
                         {/* <Rain  /> */}
-                    
-                        <img src={icon}
+                        {!icon ?
+                        <Rain/>    
+                            :
+                            <img src={icon }
             
                 alt="loading..."
                 style={{ width: '100px', height: '100px' }}
                 className="mainImg"/>
+                    }
+                        
                     
             </div>
         </div>
