@@ -3,7 +3,6 @@ import React from 'react';
 import './App.css';
 import DisplayWeather from './components/DisplayWeather';
 import Navbar from './components/Navbar.js';
-//import Sunny from './components/sunny';
 
 
 
@@ -20,7 +19,7 @@ class App extends React.Component  {
     defaultWeather: {
       id: '0',
       type: 'Very Grey',
-      
+      icon: 'http://payload100.cargocollective.com/1/9/297399/4310810/IMG_0411_1024.JPG',
       temp: '7',
       windSpeed: '-2',
       Humidity: '67',
@@ -35,7 +34,7 @@ class App extends React.Component  {
       {
         'id': '1',
         'type': 'Grey',
-        'icon': 'http://4.bp.blogspot.com/_f_OmAdlU5os/TM6pNOC3jlI/AAAAAAAACSc/oFNogp59a-Y/s1600/rain-clouds-6.JPG',
+        'icon': 'https://il3.picdn.net/shutterstock/videos/8177929/thumb/1.jpg',
         'temp': '7',
         'windSpeed': '13',
         'Humidity': '89',
@@ -45,7 +44,7 @@ class App extends React.Component  {
       {
         'id': '2',
         'type': 'Rain',
-        'icon':'https://il3.picdn.net/shutterstock/videos/8177929/thumb/1.jpg',
+        'icon':'https://patch.com/img/cdn20/users/22992871/20190313/094116/styles/raw/public/processed_images/donatphotography_rain_umbrella_shutterstock_728383990_copy-1552484394-5009.jpg',
         'temp': '12',
         'windSpeed': '8',
         'Humidity': '50',

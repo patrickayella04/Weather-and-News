@@ -1,11 +1,14 @@
-import React from 'react';
-import Rain from './1.webp'
+import React, {Fragment} from 'react';
+import Rain from './1.webp';
 
-export const rain = () => {
+const RainMore = () => {
     return (
-        <>
-            <Rain />
-        </>
+        
+    <Fragment>
+        <Rain />
+    </Fragment>
+        
     )
 }
 
+export default RainMore

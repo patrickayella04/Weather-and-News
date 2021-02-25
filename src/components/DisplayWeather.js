@@ -1,4 +1,5 @@
 import React from 'react';
+// import Rain from './rain';
 
 
 const DisplayWeather = (props) => {
@@ -10,6 +11,7 @@ const DisplayWeather = (props) => {
 
     const {type,icon, temp, windSpeed,Humidity, country, city} =props.localWeather
     console.log(icon)
+    
     return (
         <>
         <div className="user-weather">
@@ -21,8 +23,13 @@ const DisplayWeather = (props) => {
                 </div> 
 
                     <div className="col-md-9">
+                        {/* <Rain  /> */}
                     
-                    <img className="mainImg" src={icon} alt="weather-img" />
+                        <img src={icon}
+            
+                alt="loading..."
+                style={{ width: '100px', height: '100px' }}
+                className="mainImg"/>
                     
             </div>
         </div>
