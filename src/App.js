@@ -20,7 +20,7 @@ class App extends React.Component  {
     defaultWeather: {
       id: '0',
       type: 'Very Grey',
-      icon: 'http://getwallpapers.com/wallpaper/full/3/e/4/924867-vertical-sunny-day-background-2574x2000-windows-10.jpg',
+      
       temp: '7',
       windSpeed: '-2',
       Humidity: '67',
@@ -31,7 +31,7 @@ class App extends React.Component  {
     data: {},
     inputData: '',
     
-    weatherPlace: [
+    weatherPlace: [ 
       {
         'id': '1',
         'type': 'Grey',

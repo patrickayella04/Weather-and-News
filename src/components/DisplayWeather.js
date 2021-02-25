@@ -21,7 +21,7 @@ const DisplayWeather = (props) => {
                 </div> 
 
                     <div className="col-md-9">
-         
+                    
                     <img className="mainImg" src={icon} alt="weather-img" />
                     
             </div>
