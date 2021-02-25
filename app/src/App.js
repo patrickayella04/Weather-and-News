@@ -1,9 +1,10 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './App.css';
 import DisplayWeather from './components/DisplayWeather';
 import Navbar from './components/Navbar.js';
 //import Sunny from './components/sunny';
+import index from './index';
 
 
 
