@@ -3,12 +3,13 @@ import axios from 'axios';
 import './App.css';
 import DisplayWeather from './components/DisplayWeather';
 import Navbar from './components/Navbar.js';
-import Sunny from './components/sunny';
+//import Sunny from './components/sunny';
 
 
 
 class App extends React.Component  {
   // Default state of long and lat but to be changed to current
+  
   state = {
 
     coords: {
@@ -18,7 +19,7 @@ class App extends React.Component  {
     defaultWeather: {
       id: '0',
       type: 'Very Grey',
-      icon: './components/weather-icon.png',
+      icon: 'http://getwallpapers.com/wallpaper/full/3/e/4/924867-vertical-sunny-day-background-2574x2000-windows-10.jpg',
       temp: '7',
       windSpeed: '-2',
       Humidity: '67',
@@ -33,7 +34,7 @@ class App extends React.Component  {
       {
         'id': '1',
         'type': 'Grey',
-        'icon': './components/weather-icon.png',
+        'icon': 'http://4.bp.blogspot.com/_f_OmAdlU5os/TM6pNOC3jlI/AAAAAAAACSc/oFNogp59a-Y/s1600/rain-clouds-6.JPG',
         'temp': '7',
         'windSpeed': '13',
         'Humidity': '89',
@@ -43,7 +44,7 @@ class App extends React.Component  {
       {
         'id': '2',
         'type': 'Rain',
-        'icon':'./components/weather-icon.png',
+        'icon':'https://il3.picdn.net/shutterstock/videos/8177929/thumb/1.jpg',
         'temp': '12',
         'windSpeed': '8',
         'Humidity': '50',
@@ -52,7 +53,7 @@ class App extends React.Component  {
       {
         'id': '3',
         'type': 'clear',
-        'icon':'./components/weather-icon.png',
+        'icon':'https://snapshotsofwanaka.files.wordpress.com/2013/06/20130606-161727.jpg',
         'temp': '17',
         'windSpeed': '5',
         'Humidity': '58',
@@ -61,7 +62,7 @@ class App extends React.Component  {
       {
         'id': '10',
         'type': 'bright',
-        'icon':'./components/weather-icon.png',
+        'icon':'http://i.huffpost.com/gen/1349857/images/o-BRIGHT-SUNRISE-facebook.jpg',
         'temp': '21',
         'windSpeed': '16',
         'Humidity': '76',
@@ -70,7 +71,7 @@ class App extends React.Component  {
       {
         'id': '9',
         'type': 'sunny',
-        'icon':'./components/weather-icon.png',
+        'icon':'http://getwallpapers.com/wallpaper/full/3/e/4/924867-vertical-sunny-day-background-2574x2000-windows-10.jpg',
         'temp': '25',
         'windSpeed': '14',
         'Humidity': '47',
@@ -79,7 +80,7 @@ class App extends React.Component  {
       {
         'id': '8',
         'type': 'Bright sunny',
-        'icon':'./components/weather-icon.png',
+        'icon':'https://images.fineartamerica.com/images-medium-large-5/summer-sky-with-bright-sun-rike-.jpg',
         'temp': '30',
         'windSpeed': '6',
         'Humidity': '20',
@@ -88,7 +89,8 @@ class App extends React.Component  {
     ],
 
     localData: {},
-    homeTown: {}
+    homeTown: {},
+    newsData: {}
      
     
     
@@ -151,30 +153,15 @@ class App extends React.Component  {
 
 
 change = (city) => {
-  // console.log(city)
   this.setState({ inputData: city })
-  
-  
   this.setState({ homeTown: city });
-
-  
-  
-  
-  
-  
-  
-
-  
-  console.log(this.state.homeTown)
 }
 
 
 changeWeather = (event) => {
   event.preventDefault();
   const i = Math.floor(Math.random() * 5) + 1;
-  // console.log(i);
   if (i <= 2) {
-    // console.log(this.state.weatherPlace[i])
     let localWeather = this.state.weatherPlace[i];
     this.setState({ localData: localWeather });
     let city = this.state.weatherPlace[i].city;
@@ -182,19 +169,10 @@ changeWeather = (event) => {
     this.state.weatherPlace[i].city = this.state.homeTown;
     
   } else if (i >= 3) {
-    //console.log(this.state.weatherPlace[i]);
     let localWeather = this.state.weatherPlace[i];
-    // this.setState{localWeather: localData }
     this.setState({ localData: localWeather });
     this.state.weatherPlace[i].city = this.state.homeTown;
-    
   }
-
-  
-  
-  // this.setState({ city: '' })
-  
-      
 }
         
       
@@ -228,6 +206,8 @@ changeWeather = (event) => {
     //       // Here we put our new weather data into our state
     //       this.setState({ data: weatherData });
     //})
+  
+  
 
 
   render() {
@@ -237,7 +217,7 @@ changeWeather = (event) => {
           <div className="container">
             <Navbar changeWeather={this.changeWeather} changeRegion={this.change}/>
             <DisplayWeather localWeather={this.state.localData} weatherData={this.state.data} />
-            <Sunny />
+            
           </div>
           
           

@@ -8,7 +8,7 @@ const Navbar = (props) => {
             </div>
             <div className="col-md 6" onSubmit={(e) => props.changeWeather(e)}>
                 <form action="" className="region">
-                    <input className="regioninput" placeholder="Enter Location" refs='city' onChange={(e) => props.changeRegion(e.target.value)} /> 
+                    <input className="regioninput" placeholder="Enter Location"  onChange={(e) => props.changeRegion(e.target.value)} /> 
                 </form>
             </div>
         </div>

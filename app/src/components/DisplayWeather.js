@@ -9,19 +9,21 @@ const DisplayWeather = (props) => {
     //console.log(props.localWeather)
 
     const {id,type,icon, temp, windSpeed,Humidity, country, city} =props.localWeather
-    
+    console.log(icon)
     return (
+        <>
         <div className="user-weather">
-        <div className="row">
-            <div className="col-md-3 weather-temp">
-                <h1>{temp}<sup>o</sup>C , {type}</h1>
-                <h4>{id}</h4>
-                <p>{city}  {country}</p>
-            </div>
+            <div className="row">
+                <div className="col-md-3 weather-temp">
+                    <h1>{temp}<sup>o</sup>C , {type}</h1>
+                    {/* <h4>{id}</h4> */}
+                    <p>{city}  {country}</p>
+                </div> 
 
-            <div className="col-md-9">
+                    <div className="col-md-9">
+         
                     <img className="mainImg" src={icon} alt="weather-img" />
-                    <img src="./components/weather-icon.png" alt=""/>
+                    
             </div>
         </div>
 
@@ -47,7 +49,20 @@ const DisplayWeather = (props) => {
             </div>
 
         </div>
+            
     </div>
+        
+            
+
+
+
+    {/* <div className="user-weather">
+                <div className="row">
+                    
+            
+        </div>
+    </div> */}
+     </>
     )
 }
 
