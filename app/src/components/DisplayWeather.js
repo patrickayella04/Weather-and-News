@@ -8,7 +8,7 @@ const DisplayWeather = (props) => {
 
     //console.log(props.localWeather)
 
-    const {id,type,icon, temp, windSpeed,Humidity, country, city} =props.localWeather
+    const {type,icon, temp, windSpeed,Humidity, country, city} =props.localWeather
     console.log(icon)
     return (
         <>
