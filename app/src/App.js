@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import DisplayWeather from './components/DisplayWeather';
 import Navbar from './components/Navbar.js';
+import Sunny from './components/sunny';
 
 
 
@@ -235,7 +236,8 @@ changeWeather = (event) => {
         <div className="App">
           <div className="container">
             <Navbar changeWeather={this.changeWeather} changeRegion={this.change}/>
-          <DisplayWeather localWeather={this.state.localData} weatherData={this.state.data}/>
+            <DisplayWeather localWeather={this.state.localData} weatherData={this.state.data} />
+            <Sunny />
           </div>
           
           
