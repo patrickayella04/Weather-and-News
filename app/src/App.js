@@ -9,12 +9,88 @@ import Navbar from './components/Navbar.js';
 class App extends React.Component  {
   // Default state of long and lat but to be changed to current
   state = {
+
     coords: {
       latitude: 45,
       longitude: 60
     },
+    defaultWeather: {
+      id: '0',
+      type: 'Very Grey',
+      icon: './components/weather-icon.png',
+      temp: '7',
+      windSpeed: '-2',
+      Humidity: '67',
+      city: 'London',
+      country: 'United Kingdom'
+
+    },
     data: {},
-    inputData:''
+    inputData: '',
+    
+    weatherPlace: [
+      {
+        'id': '1',
+        'type': 'Grey',
+        'icon': './components/weather-icon.png',
+        'temp': '7',
+        'windSpeed': '13',
+        'Humidity': '89',
+        'city': ''
+        
+      },
+      {
+        'id': '2',
+        'type': 'Rain',
+        'icon':'./components/weather-icon.png',
+        'temp': '12',
+        'windSpeed': '8',
+        'Humidity': '50',
+        'city': ''
+      },
+      {
+        'id': '3',
+        'type': 'clear',
+        'icon':'./components/weather-icon.png',
+        'temp': '17',
+        'windSpeed': '5',
+        'Humidity': '58',
+        'city': ''
+      },
+      {
+        'id': '10',
+        'type': 'bright',
+        'icon':'./components/weather-icon.png',
+        'temp': '21',
+        'windSpeed': '16',
+        'Humidity': '76',
+        'city': ''
+      },
+      {
+        'id': '9',
+        'type': 'sunny',
+        'icon':'./components/weather-icon.png',
+        'temp': '25',
+        'windSpeed': '14',
+        'Humidity': '47',
+        'city': ''
+      },
+      {
+        'id': '8',
+        'type': 'Bright sunny',
+        'icon':'./components/weather-icon.png',
+        'temp': '30',
+        'windSpeed': '6',
+        'Humidity': '20',
+        'city': ''
+      }
+    ],
+
+    localData: {},
+    homeTown: {}
+     
+    
+    
   }
 
   componentDidMount() {
@@ -56,39 +132,102 @@ class App extends React.Component  {
       });
     } else {
       console.log('not supported')
-    }
+    };
+
+    let deWeather = this.state.defaultWeather;
+
+    this.setState({localData: deWeather})
   }
 
-  // Track the input field - (e.target.value is passed in as argument in onChange in Navbar component and city represents the argument as we console log the cit. We get the input value)
-  change = (city) => {
-    // console.log(city)
-    this.setState({inputData: city})
-  }
+  // Track the input field - (e.target.value is passed in as argument in onChange in Navbar@ component and city represents the argument as we console log the cit. We get the input value)
+  
 
   // Change City weather
-  changeWeather = (event) => {
-    event.preventDefault();
+
+  
+
+
+
+
+change = (city) => {
+  // console.log(city)
+  this.setState({ inputData: city })
+  
+  
+  this.setState({ homeTown: city });
+
+  
+  
+  
+  
+  
+  
+
+  
+  console.log(this.state.homeTown)
+}
+
+
+changeWeather = (event) => {
+  event.preventDefault();
+  const i = Math.floor(Math.random() * 5) + 1;
+  // console.log(i);
+  if (i <= 2) {
+    // console.log(this.state.weatherPlace[i])
+    let localWeather = this.state.weatherPlace[i];
+    this.setState({ localData: localWeather });
+    let city = this.state.weatherPlace[i].city;
+    this.setState({ inputData: city });
+    this.state.weatherPlace[i].city = this.state.homeTown;
+    
+  } else if (i >= 3) {
+    //console.log(this.state.weatherPlace[i]);
+    let localWeather = this.state.weatherPlace[i];
+    // this.setState{localWeather: localData }
+    this.setState({ localData: localWeather });
+    this.state.weatherPlace[i].city = this.state.homeTown;
+    
+  }
+
+  
+  
+  // this.setState({ city: '' })
+  
+      
+}
+        
+      
+  
+  
+   
+    // let inputCity = this.state.weatherPlace[i].city;
+
+      
+    //console.log(this.state.weatherPlace[0].icon);
+    // let localWeather = this.state.weatherPlace[i] 
+
+
 
     // api call 
-    axios.get(`http://api.weatherstack.com/current?access_key=823d378bc0e421a61a1daa5a563e3104&query=${this.state.inputData}`).then(res => {
-      console.log(res);
+    // axios.get(`http://api.weatherstack.com/current?access_key=823d378bc0e421a61a1daa5a563e3104&query=${this.state.inputData}`).then(res => {
+    //   console.log(res);
 
-      let weatherData = {
-            location: res.data.location.name,
-            temperature: res.data.current.temperature,
-            description: res.data.current.weather_descriptions[0], 
-            region: res.data.location.region,
-            country: res.data.location.country,
-            wind_speed: res.data.current.wind_speed,
-            pressure: res.data.current.pressure,
-            precip: res.data.current.precip,
-            humidity: res.data.current.humidity,
-            img: res.data.current.weather_icons
-          }
-          // Here we put our new weather data into our state
-          this.setState({ data: weatherData });
-    })
-  }
+    //   let weatherData = {
+    //         location: res.data.location.name,
+    //         temperature: res.data.current.temperature,
+    //         description: res.data.current.weather_descriptions[0], 
+    //         region: res.data.location.region,
+    //         country: res.data.location.country,
+    //         wind_speed: res.data.current.wind_speed,
+    //         pressure: res.data.current.pressure,
+    //         precip: res.data.current.precip,
+    //         humidity: res.data.current.humidity,
+    //         img: res.data.current.weather_icons
+    //       }
+    //       // Here we put our new weather data into our state
+    //       this.setState({ data: weatherData });
+    //})
+
 
   render() {
       return (
@@ -96,7 +235,7 @@ class App extends React.Component  {
         <div className="App">
           <div className="container">
             <Navbar changeWeather={this.changeWeather} changeRegion={this.change}/>
-          <DisplayWeather weatherData={this.state.data}/>
+          <DisplayWeather localWeather={this.state.localData} weatherData={this.state.data}/>
           </div>
           
           
