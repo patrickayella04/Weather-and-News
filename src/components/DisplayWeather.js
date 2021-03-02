@@ -4,11 +4,7 @@ import Rain from './rain';
 
 
 const DisplayWeather = (props) => {
-    const style = {
-        '@media (max-width: 600px)': {
-            width: '79.5vw',
-        }
-    }
+    
     // console.log(props.weatherData);
 
     // const { temperature, description, location, region, country, wind_speed, pressure, precip, humidity, img } = props.weatherData;
@@ -24,8 +20,30 @@ const DisplayWeather = (props) => {
 
     return (
         <>
-        <div className="user-weather">
-            <div className="main-container">
+            <div className="user-weather">
+                
+
+
+
+                <div className="main-container">
+                    
+
+
+                <div className=" container1">
+                        
+                        
+                        <div  src={require('../components/pexels-brett-sayles-912364.jpg')}
+        
+                            alt="loading..."
+                            style={{ width: '40vw', height: '30vw'}}
+                            className={icon}
+                             />
+               
+                    
+                
+        </div>
+
+
                     <div className=" container2">
                         <div className="weather-info">
                         <h1>{props.temperature}<sup>o</sup>C , {type}</h1>
@@ -35,22 +53,7 @@ const DisplayWeather = (props) => {
                     
                 </div> 
 
-                    <div className=" container1">
-                        
-                        {'' ?
-                            
-                        <Rain/>    
-                            :
-                            <div  src={require('../components/pexels-brett-sayles-912364.jpg')}
-            
-                                alt="loading..."
-                                style={{ width: '40vw', height: '30vw'}}
-                                className={icon}
-                                 />
-                    }
-                        
-                    
-            </div>
+                   
         </div>
 
         
