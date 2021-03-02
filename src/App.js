@@ -19,12 +19,13 @@ class App extends React.Component  {
     defaultWeather: {
       id: '0',
       type: 'Very Grey',
-      icon: 'http://payload100.cargocollective.com/1/9/297399/4310810/IMG_0411_1024.JPG',
+      icon: 'very-grey',
       temp: '7',
       windSpeed: '-2',
       Humidity: '67',
       city: 'London',
-      country: 'United Kingdom'
+      
+      localPic: './components/pexels-brett-sayles-912364.jpg'
 
     },
     data: {},
@@ -34,9 +35,9 @@ class App extends React.Component  {
       {
         'id': '1',
         'type': 'Grey',
-        'icon': 'https://il3.picdn.net/shutterstock/videos/8177929/thumb/1.jpg',
+        'icon': 'grey',
         'temp': '7',
-        'windSpeed': '13',
+        
         'Humidity': '89',
         'city': ''
         
@@ -44,53 +45,62 @@ class App extends React.Component  {
       {
         'id': '2',
         'type': 'Rain',
-        'icon':'https://patch.com/img/cdn20/users/22992871/20190313/094116/styles/raw/public/processed_images/donatphotography_rain_umbrella_shutterstock_728383990_copy-1552484394-5009.jpg',
+        'icon':'rain',
         'temp': '12',
-        'windSpeed': '8',
-        'Humidity': '50',
+        
+        
         'city': ''
       },
       {
         'id': '3',
         'type': 'clear',
-        'icon':'https://snapshotsofwanaka.files.wordpress.com/2013/06/20130606-161727.jpg',
+        'icon':'clear',
         'temp': '17',
-        'windSpeed': '5',
-        'Humidity': '58',
+        
         'city': ''
       },
       {
         'id': '10',
         'type': 'bright',
-        'icon':'http://i.huffpost.com/gen/1349857/images/o-BRIGHT-SUNRISE-facebook.jpg',
+        'icon':'bright',
         'temp': '21',
-        'windSpeed': '16',
-        'Humidity': '76',
+        
         'city': ''
       },
       {
         'id': '9',
         'type': 'sunny',
-        'icon':'http://getwallpapers.com/wallpaper/full/3/e/4/924867-vertical-sunny-day-background-2574x2000-windows-10.jpg',
+        'icon':'sunny',
         'temp': '25',
-        'windSpeed': '14',
-        'Humidity': '47',
+        
         'city': ''
       },
       {
         'id': '8',
         'type': 'Bright sunny',
-        'icon':'https://images.fineartamerica.com/images-medium-large-5/summer-sky-with-bright-sun-rike-.jpg',
+        'icon':'bright-sunny',
         'temp': '30',
-        'windSpeed': '6',
-        'Humidity': '20',
+        
         'city': ''
-      }
+      },
+      {
+        'id': '1',
+        'type': 'Very Grey',
+        'icon': 'very-grey',
+        'temp': '7',
+        
+        'Humidity': '89',
+        'city': ''
+        
+      },
+      
     ],
 
     localData: {},
     homeTown: {},
-    newsData: {}
+    newsData: {},
+    temp: '',
+    clearInput: true
      
     
     
@@ -136,6 +146,11 @@ class App extends React.Component  {
     // } else {
     //   console.log('not supported')
     // };
+    let temP = Math.floor(Math.random() * 30) + 1;
+
+    this.setState({ temp: temP });
+   
+
 
      let deWeather = this.state.defaultWeather;
 
@@ -155,26 +170,65 @@ class App extends React.Component  {
 change = (city) => {
   this.setState({ inputData: city })
   this.setState({ homeTown: city });
+  
+  
 }
 
 
-changeWeather = (event) => {
-  event.preventDefault();
-  const i = Math.floor(Math.random() * 5) + 1;
-  if (i <= 2) {
-    let localWeather = this.state.weatherPlace[i];
-    this.setState({ localData: localWeather });
-    let city = this.state.weatherPlace[i].city;
-    this.setState({ inputData: city });
-    this.state.weatherPlace[i].city = this.state.homeTown;
+  changeWeather = (event) => {
+    event.preventDefault();
+
+
+    // Change Weather data
+    const i = Math.floor(Math.random() * 7) ;
+    if (i <= 2) {
+      let localWeather = this.state.weatherPlace[i];
     
-  } else if (i >= 3) {
-    let localWeather = this.state.weatherPlace[i];
-    this.setState({ localData: localWeather });
-    this.state.weatherPlace[i].city = this.state.homeTown;
-  }
+      this.setState({ localData: localWeather });
+      const city = this.state.weatherPlace[i].city;
+      this.setState({ inputData: city });
+      this.state.weatherPlace[i].city = this.state.homeTown;
+    
+    } else if (i >= 3) {
+      let localWeather = this.state.weatherPlace[i];
+
+      
+      this.setState({ localData: localWeather });
+      let city = this.state.weatherPlace[i].city;
+      this.setState({ inputData: city });
+      this.state.weatherPlace[i].city = this.state.homeTown;
+    }
+
+
+
+    console.log(this.state.weatherPlace[i].city)
+    // Change weather temperature
+    let temP = Math.floor(Math.random() * 30) + 1;
+    console.log(temP)
+    this.setState({ temp: temP });
+
+    //Clear input
+    let clear = false;
+    this.setState({ clearInput: clear })
+   
+      setTimeout(() => {
+        this.setState({
+          clearInput: true
+        });
+        console.log(this.state.clearInput)
+      }, 1000)
+  
+   
+      
+    
+    
 }
-        
+
+  
+
+  
+  
+    
       
   
   
@@ -215,8 +269,8 @@ changeWeather = (event) => {
       
         <div className="App">
           <div className="container">
-            <Navbar changeWeather={this.changeWeather} changeRegion={this.change}/>
-            <DisplayWeather localWeather={this.state.localData} weatherData={this.state.data} />
+            <Navbar changeWeather={this.changeWeather} changeRegion={this.change} clearInput={this.state.clearInput}/>
+            <DisplayWeather localWeather={this.state.localData} temperature={this.state.temp} weatherData={this.state.data} greeting={this.state.hello} />
             
           </div>
           
