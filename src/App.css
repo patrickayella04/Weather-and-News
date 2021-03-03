@@ -43,17 +43,19 @@
   /* margin-left: 15vw; */
   height: 30vw;
   width: 40vw;
-  background-color: rgba(255, 255, 255, 0.322);
+  /* background-color: rgba(255, 255, 255, 0.322); */
+  background-color: #ffffff;
 }
 .container2 {
-  background-color: rgba(255, 255, 255, 0.322);
+  /* background-color: rgba(255, 255, 255, 0.322); */
+  background-color: #ffffff;
   height: 30vw;
   width: 40vw;
   display: grid;
   place-items: center;
 }
-.container2 h1, p {
-  color: black;
+.container2 h1, p, sup, .weather-info b, h2 {
+  color: rgb(7, 7, 7);
 }
 .weather-info {
   display: grid;
@@ -100,31 +102,43 @@
 }
 
 .grey {
+  width: 40vw;
+  height: 30vw;
   background-image: url(./components/5-10-19-2.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
 }
 .rain {
+  width: 40vw;
+  height: 30vw;
   background-image: url(./components/rain-weather-accuracy.jpg)  ;
   background-repeat: no-repeat;
   background-size: 150%;
 }
 .clear {
+  width: 40vw;
+  height: 30vw;
   background-image: url(./components/176041.jpg) ;
   background-repeat: no-repeat;
   background-size: 100%;
 }
 .bright {
+  width: 40vw;
+  height: 30vw;
   background-image: url(./components/summer-blue-sky-and-sun-with-parasol-e1565779177430.jpg) ;
   background-repeat: no-repeat;
   background-size: 120%;
 }
 .sunny {
+  width: 40vw;
+  height: 30vw;
   background-image: url(./components/sunny-sky-png-welcome-to-sunny-skies-1050.jpg)  ;
   background-repeat: no-repeat;
   background-size: 120%;
 }
 .bright-sunny {
+  width: 40vw;
+  height: 30vw;
   background-image: url(./components/maxresdefault.jpg) ;
   background-repeat: no-repeat;
   background-size: 140%;
@@ -149,7 +163,7 @@
   }
 
   .container1, .container2 {
-    background-color: rgba(255, 255, 255, 0.322);
+    background-color:#ffffff;
     /* padding: 10vw; */
   }
 
@@ -163,37 +177,37 @@
   .very-grey {
   
     width: 79.5vw;
-    height: 70vw;
+    height: 61vw;
   }
   .grey {
   
     width: 79.5vw;
-    height: 70vw;
+    height: 61vw;
   }
   .rain {
   
     width: 79.5vw;
-    height: 70vw;
+    height: 61vw;
   }
   .clear{
   
     width: 79.5vw;
-    height: 70vw;
+    height: 61vw;
   }
   .bright {
   
     width: 79.5vw;
-    height: 70vw;
+    height: 63vw;
   }
   .sunny {
   
     width: 79.5vw;
-    height: 70vw;
+    height: 61vw;
   }
   .bright-sunny {
   
     width: 79.5vw;
-    height: 70vw;
+    height: 61vw;
 }
 
 }

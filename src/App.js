@@ -39,7 +39,7 @@ class App extends React.Component  {
         'icon': 'grey',
         'temp': '7',
         'precip': '',
-        'Humidity': '89',
+        'Humidity': '',
         'city': ''
         
       },
@@ -49,7 +49,7 @@ class App extends React.Component  {
         'icon':'rain',
         'temp': '12',
         'precip': '',
-        'Humidity': '89',
+        'Humidity': '',
         
         'city': ''
       },
@@ -59,7 +59,7 @@ class App extends React.Component  {
         'icon':'clear',
         'temp': '17',
         'precip': '',
-        'Humidity': '89',
+        'Humidity': '',
         'city': ''
       },
       {
@@ -68,7 +68,7 @@ class App extends React.Component  {
         'icon':'bright',
         'temp': '21',
         'precip': '',
-        'Humidity': '89',
+        'Humidity': '',
         'city': ''
       },
       {
@@ -77,7 +77,7 @@ class App extends React.Component  {
         'icon':'sunny',
         'temp': '25',
         'precip': '',
-        'Humidity': '89',
+        'Humidity': '',
         'city': ''
       },
       {
@@ -86,7 +86,7 @@ class App extends React.Component  {
         'icon':'bright-sunny',
         'temp': '30',
         'precip': '',
-        'Humidity': '89',
+        'Humidity': '',
         'city': ''
       },
       {
@@ -96,7 +96,7 @@ class App extends React.Component  {
         'temp': '7',
         
         'precip': '',
-        'Humidity': '89',
+        'Humidity': '',
         'city': ''
         
       },
@@ -107,6 +107,8 @@ class App extends React.Component  {
     homeTown: {},
     newsData: {},
     temp: '',
+    precip: '',
+    humid: '',
     clearInput: true
      
     
@@ -160,14 +162,15 @@ class App extends React.Component  {
     this.setState({ temp: temP });
 
     // Preciptation
+    
     let Precipitation = Math.floor(Math.random() * 30) + 1;
     this.state.defaultWeather.precip = Precipitation
     this.setState({ precip: Precipitation });
 
     // Humitity 
-    let humidity = Math.floor(Math.random() * 30) + 1;
-    this.state.defaultWeather.Humidity = humidity
-    this.setState({ Humidity: humidity });
+    let hum = Math.floor(Math.random() * 30) + 1;
+    this.state.defaultWeather.Humidity = hum
+    this.setState({ Humidity: hum });
    
 
 
@@ -207,6 +210,43 @@ change = (city) => {
       const city = this.state.weatherPlace[i].city;
       this.setState({ inputData: city });
       this.state.weatherPlace[i].city = this.state.homeTown;
+
+     
+     
+     
+     
+      // Preciptation
+
+      let precipitation = Math.floor(Math.random() * 30) + 1;
+
+      this.setState({precip : precipitation})
+
+      // this.state.localWeather.precip = precipitation;
+
+      // this.setState({ precip: precipitation });
+
+      
+    
+    
+    
+    
+      // Humitity
+      let humidity = Math.floor(Math.random() * 30) + 1;
+
+      this.setState({humid : humidity})
+      
+      // this.state.localWeather.Humidity = humidity
+      
+      // this.setState({ Humidity: humidity });
+      
+    
+    
+    
+    
+    
+    
+    
+    
     
     } else if (i >= 3) {
       let localWeather = this.state.weatherPlace[i];
@@ -216,8 +256,32 @@ change = (city) => {
       let city = this.state.weatherPlace[i].city;
       this.setState({ inputData: city });
       this.state.weatherPlace[i].city = this.state.homeTown;
-    }
 
+      // Preciptation
+
+      let precipitation = Math.floor(Math.random() * 30) + 1;
+
+      this.setState({precip : precipitation})
+
+      // this.state.localWeather.precip = precipitation;
+
+      // this.setState({ precip: precipitation });
+
+      
+    
+    
+    
+    
+      // Humitity
+      let humidity = Math.floor(Math.random() * 30) + 1;
+
+      this.setState({humid : humidity})
+      
+      // this.state.localWeather.Humidity = humidity
+      
+      // this.setState({ Humidity: humidity });
+    }
+     
 
 
     console.log(this.state.weatherPlace[i].city)
@@ -235,7 +299,7 @@ change = (city) => {
           clearInput: true
         });
         console.log(this.state.clearInput)
-      }, 1000)
+      }, 10)
   
    
       
@@ -289,7 +353,7 @@ change = (city) => {
         <div className="App">
           <div className="container">
             <Navbar changeWeather={this.changeWeather} changeRegion={this.change} clearInput={this.state.clearInput}/>
-            <DisplayWeather localWeather={this.state.localData} temperature={this.state.temp} weatherData={this.state.data} greeting={this.state.hello} />
+            <DisplayWeather localWeather={this.state.localData} temperature={this.state.temp} weatherData={this.state.data} greeting={this.state.hello} precip={this.state.precip} humid={this.state.humid} />
             
           </div>
           

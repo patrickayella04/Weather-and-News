@@ -11,7 +11,9 @@ const DisplayWeather = (props) => {
 
     //console.log(props.localWeather)
 
-    const { Humidity,precip,type, icon, country, city } = props.localWeather;
+    const { Humidity, type, icon, country, city } = props.localWeather;
+    
+
     
     //const temp = props.temperature
     //const { hello } = props.greeting
@@ -54,12 +56,12 @@ const DisplayWeather = (props) => {
 
                         <div className="col-md-3 weather-info">
                     <p><b>Precipitation</b>(mm)</p>
-                    <h2>{precip}</h2>
+                    <h2>{props.precip}</h2>
                         </div>
                         
                         <div className="col-md-3 weather-info">
                     <p><b>Humidity</b>(%)</p>
-                    <h2>{Humidity}</h2>
+                            <h2>{props.humid} {Humidity}</h2>
                 </div>
                     
                 </div> 
