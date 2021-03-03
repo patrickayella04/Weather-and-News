@@ -1,5 +1,5 @@
 import React from 'react';
-import Rain from './rain';
+
 
 
 
@@ -7,11 +7,11 @@ const DisplayWeather = (props) => {
     
     // console.log(props.weatherData);
 
-    // const { temperature, description, location, region, country, wind_speed, pressure, precip, humidity, img } = props.weatherData;
+     const { temperature, description, location, region, wind_speed, pressure, img } = props.weatherData;
 
     //console.log(props.localWeather)
 
-    const { type, icon, country, city } = props.localWeather;
+    const { Humidity,precip,type, icon, country, city } = props.localWeather;
     
     //const temp = props.temperature
     //const { hello } = props.greeting
@@ -35,7 +35,7 @@ const DisplayWeather = (props) => {
                         <div  src={require('../components/pexels-brett-sayles-912364.jpg')}
         
                             alt="loading..."
-                            style={{ width: '40vw', height: '30vw'}}
+                            // style={{ width: '40vw', height: '30vw'}}
                             className={icon}
                              />
                
@@ -47,9 +47,20 @@ const DisplayWeather = (props) => {
                     <div className=" container2">
                         <div className="weather-info">
                         <h1>{props.temperature}<sup>o</sup>C , {type}</h1>
-                    {/* <h4>{id}</h4> */}
+                   
                         <p>{city}  {country} </p>
                         </div>
+
+
+                        <div className="col-md-3 weather-info">
+                    <p><b>Precipitation</b>(mm)</p>
+                    <h2>{precip}</h2>
+                        </div>
+                        
+                        <div className="col-md-3 weather-info">
+                    <p><b>Humidity</b>(%)</p>
+                    <h2>{Humidity}</h2>
+                </div>
                     
                 </div> 
 

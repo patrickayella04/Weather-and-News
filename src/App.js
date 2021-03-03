@@ -18,10 +18,11 @@ class App extends React.Component  {
     },
     defaultWeather: {
       id: '0',
-      type: 'Very Grey',
+      type: 'very grey',
       icon: 'very-grey',
       temp: '7',
       windSpeed: '-2',
+      precip: '',
       Humidity: '67',
       city: 'London',
       
@@ -34,20 +35,21 @@ class App extends React.Component  {
     weatherPlace: [ 
       {
         'id': '1',
-        'type': 'Grey',
+        'type': 'grey',
         'icon': 'grey',
         'temp': '7',
-        
+        'precip': '',
         'Humidity': '89',
         'city': ''
         
       },
       {
         'id': '2',
-        'type': 'Rain',
+        'type': 'rain',
         'icon':'rain',
         'temp': '12',
-        
+        'precip': '',
+        'Humidity': '89',
         
         'city': ''
       },
@@ -56,7 +58,8 @@ class App extends React.Component  {
         'type': 'clear',
         'icon':'clear',
         'temp': '17',
-        
+        'precip': '',
+        'Humidity': '89',
         'city': ''
       },
       {
@@ -64,7 +67,8 @@ class App extends React.Component  {
         'type': 'bright',
         'icon':'bright',
         'temp': '21',
-        
+        'precip': '',
+        'Humidity': '89',
         'city': ''
       },
       {
@@ -72,23 +76,26 @@ class App extends React.Component  {
         'type': 'sunny',
         'icon':'sunny',
         'temp': '25',
-        
+        'precip': '',
+        'Humidity': '89',
         'city': ''
       },
       {
         'id': '8',
-        'type': 'Bright sunny',
+        'type': 'bright sunny',
         'icon':'bright-sunny',
         'temp': '30',
-        
+        'precip': '',
+        'Humidity': '89',
         'city': ''
       },
       {
         'id': '1',
-        'type': 'Very Grey',
+        'type': 'very grey',
         'icon': 'very-grey',
         'temp': '7',
         
+        'precip': '',
         'Humidity': '89',
         'city': ''
         
@@ -146,9 +153,21 @@ class App extends React.Component  {
     // } else {
     //   console.log('not supported')
     // };
-    let temP = Math.floor(Math.random() * 30) + 1;
+    // let temP = Math.floor(Math.random() * 30) + 1;
 
+    // Default temp
+    let temP = this.state.defaultWeather.temp
     this.setState({ temp: temP });
+
+    // Preciptation
+    let Precipitation = Math.floor(Math.random() * 30) + 1;
+    this.state.defaultWeather.precip = Precipitation
+    this.setState({ precip: Precipitation });
+
+    // Humitity 
+    let humidity = Math.floor(Math.random() * 30) + 1;
+    this.state.defaultWeather.Humidity = humidity
+    this.setState({ Humidity: humidity });
    
 
 

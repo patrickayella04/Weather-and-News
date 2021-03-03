@@ -37,7 +37,7 @@
 }
 .main-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
 }
 .container1  {
   /* margin-left: 15vw; */
@@ -92,7 +92,8 @@
 
 
 .very-grey {
-  
+  width: 40vw;
+  height: 30vw;
   background-image: url(./components/creative-rain_01.jpg)  ;
   background-repeat: no-repeat;
   background-size: 120%;
@@ -129,12 +130,11 @@
   background-size: 140%;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 466px) {
+  
   .main-container {
     display: block;
     text-align: center;
-    
-    
   }
   
   .container2, .container1 {
@@ -142,11 +142,15 @@
     height: 100%;
   }
   
-
+  .container2 {
+    width: 79.5vw;
+    height: 55vw;
+    
+  }
 
   .container1, .container2 {
     background-color: rgba(255, 255, 255, 0.322);
-    padding: 10vw;
+    /* padding: 10vw; */
   }
 
 
@@ -156,4 +160,40 @@
     padding-bottom: 10vw;
   }
   
+  .very-grey {
+  
+    width: 79.5vw;
+    height: 70vw;
+  }
+  .grey {
+  
+    width: 79.5vw;
+    height: 70vw;
+  }
+  .rain {
+  
+    width: 79.5vw;
+    height: 70vw;
+  }
+  .clear{
+  
+    width: 79.5vw;
+    height: 70vw;
+  }
+  .bright {
+  
+    width: 79.5vw;
+    height: 70vw;
+  }
+  .sunny {
+  
+    width: 79.5vw;
+    height: 70vw;
+  }
+  .bright-sunny {
+  
+    width: 79.5vw;
+    height: 70vw;
+}
+
 }
