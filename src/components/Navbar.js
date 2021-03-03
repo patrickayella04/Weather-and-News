@@ -32,7 +32,7 @@ const Navbar = (props) => {
              
                 <div className="region">
                 
-                    <button className="regioninput" onClick={props.removeInput}>New Search</button>
+                    <button className="button-search" onClick={props.removeInput}>New Search</button>
         </div> 
 
              

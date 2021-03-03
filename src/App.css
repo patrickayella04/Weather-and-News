@@ -11,6 +11,49 @@
   width:80%;
   margin:auto;
 }
+.button-search {
+  cursor: pointer;
+  font-size: 1vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.555);
+  border: none;
+  outline: none;
+  padding: 0 0.5vw 0 0.5vw;
+  position: relative;
+  border-radius: 10px;
+}
+.button-search::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.123);
+  
+  transition: transform 200ms ease-in;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left:0;
+}
+.button-search::after {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.button-search:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.button-search:hover {
+  color: white;
+}
+
+
+
+
+
+
+
+
+
 
 .App{
   height:100vh;
@@ -219,6 +262,14 @@
   
     width: 79.5vw;
     height: 61vw;
+}
+.button-search {
+  cursor: pointer;
+  font-size: 4vw;
+  color:black;
+  padding: 2vw;
+  position: relative;
+  border-radius: 0px;
 }
 
 }
