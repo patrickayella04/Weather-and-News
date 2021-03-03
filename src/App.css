@@ -43,18 +43,18 @@
   /* margin-left: 15vw; */
   height: 30vw;
   width: 40vw;
-  /* background-color: rgba(255, 255, 255, 0.322); */
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.603);
+  
 }
 .container2 {
-  /* background-color: rgba(255, 255, 255, 0.322); */
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.308);
+  
   height: 30vw;
   width: 40vw;
   display: grid;
   place-items: center;
 }
-.container2 h1, p, sup, .weather-info b, h2 {
+.container2 h1, p, .weather-info , h2 {
   color: rgb(7, 7, 7);
 }
 .weather-info {
@@ -90,6 +90,17 @@
   font-weight:600;
   font-size:1rem;
   padding-left:0;
+}
+
+.humid-precip {
+  display: flex;
+  flex-direction: row;
+}
+.precip  {
+  padding-right: 2vw;
+}
+.humid  {
+  padding-left: 2vw;
 }
 
 
@@ -163,7 +174,7 @@
   }
 
   .container1, .container2 {
-    background-color:#ffffff;
+    background-color: rgba(255, 255, 255, 0.603);
     /* padding: 10vw; */
   }
 

@@ -30,10 +30,10 @@ const Navbar = (props) => {
             
             :
              
-                <div>
+                <div className="region">
                 
-                    
-        </div>
+                    <button className="regioninput" onClick={props.removeInput}>New Search</button>
+        </div> 
 
              
         }

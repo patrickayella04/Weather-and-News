@@ -294,12 +294,12 @@ change = (city) => {
     let clear = false;
     this.setState({ clearInput: clear })
    
-      setTimeout(() => {
-        this.setState({
-          clearInput: true
-        });
-        console.log(this.state.clearInput)
-      }, 10)
+      // setTimeout(() => {
+      //   this.setState({
+      //     clearInput: true
+      //   });
+      //   console.log(this.state.clearInput)
+      // }, 10)
   
    
       
@@ -307,7 +307,10 @@ change = (city) => {
     
 }
 
-  
+  removeInput = () => {
+    this.setState({ clearInput: true });
+    
+  }
 
   
   
@@ -352,8 +355,17 @@ change = (city) => {
       
         <div className="App">
           <div className="container">
-            <Navbar changeWeather={this.changeWeather} changeRegion={this.change} clearInput={this.state.clearInput}/>
-            <DisplayWeather localWeather={this.state.localData} temperature={this.state.temp} weatherData={this.state.data} greeting={this.state.hello} precip={this.state.precip} humid={this.state.humid} />
+            <Navbar
+              changeWeather={this.changeWeather} changeRegion={this.change}
+              removeInput={this.removeInput}
+              clearInput={this.state.clearInput} />
+            
+            <DisplayWeather
+              localWeather={this.state.localData} temperature={this.state.temp}
+              weatherData={this.state.data}
+              greeting={this.state.hello}
+              precip={this.state.precip}
+              humid={this.state.humid} />
             
           </div>
           

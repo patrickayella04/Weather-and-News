@@ -7,11 +7,11 @@ const DisplayWeather = (props) => {
     
     // console.log(props.weatherData);
 
-     const { temperature, description, location, region, wind_speed, pressure, img } = props.weatherData;
+    //  const { temperature, description, location, region, wind_speed, pressure, img } = props.weatherData;
 
     //console.log(props.localWeather)
 
-    const { Humidity, type, icon, country, city } = props.localWeather;
+    const { Humidity, type, icon, city } = props.localWeather;
     
 
     
@@ -37,7 +37,7 @@ const DisplayWeather = (props) => {
                         <div  src={require('../components/pexels-brett-sayles-912364.jpg')}
         
                             alt="loading..."
-                            // style={{ width: '40vw', height: '30vw'}}
+                            
                             className={icon}
                              />
                
@@ -50,19 +50,32 @@ const DisplayWeather = (props) => {
                         <div className="weather-info">
                         <h1>{props.temperature}<sup>o</sup>C , {type}</h1>
                    
-                        <p>{city}  {country} </p>
+                       
                         </div>
-
 
                         <div className="col-md-3 weather-info">
-                    <p><b>Precipitation</b>(mm)</p>
-                    <h2>{props.precip}</h2>
+                    <p><b>Location</b></p>
+                    <h2>{city}</h2>
                         </div>
+
+
+                        <div className="col-md-3 weather-info humid-precip">
+
+                            <div className="precip">
+                                <p><b>Precipitation</b>(mm)</p>
+                                <h2>{props.precip}</h2>
+                            </div>
+                    
+
+                            <div className="humid">
+                                <p><b>Humidity</b>(%)</p>
+                                <h2>{props.humid} {Humidity}</h2>
+                            </div>
+
+                        </div>
+                            
+
                         
-                        <div className="col-md-3 weather-info">
-                    <p><b>Humidity</b>(%)</p>
-                            <h2>{props.humid} {Humidity}</h2>
-                </div>
                     
                 </div> 
 
@@ -75,15 +88,6 @@ const DisplayWeather = (props) => {
     </div>
         
             
-
-
-
-    {/* <div className="user-weather">
-                <div className="row">
-                    
-            
-        </div>
-    </div> */}
      </>
     )
 }
