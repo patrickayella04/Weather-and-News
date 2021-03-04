@@ -48,7 +48,7 @@ const DisplayWeather = (props) => {
 
                     <div className=" container2">
                         <div className="weather-info">
-                        <h1>{props.temperature}<sup>o</sup>C , {type}</h1>
+                        <h1>{props.temperature} <sup>o</sup> C , {type}</h1>
                    
                        
                         </div>
@@ -62,13 +62,13 @@ const DisplayWeather = (props) => {
                         <div className="col-md-3 weather-info humid-precip">
 
                             <div className="precip">
-                                <p><b>Precipitation</b>(mm)</p>
+                                <p><b>Precipitation</b> <sup className="mil-perc">(mm)</sup></p>
                                 <h2>{props.precip}</h2>
                             </div>
                     
 
                             <div className="humid">
-                                <p><b>Humidity</b>(%)</p>
+                                <p><b>Humidity</b> <sup className="mil-perc">(%)</sup></p>
                                 <h2>{props.humid} {Humidity}</h2>
                             </div>
 
