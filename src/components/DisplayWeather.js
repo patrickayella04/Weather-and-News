@@ -48,7 +48,7 @@ const DisplayWeather = (props) => {
 
                     <div className=" container2">
                         <div className="weather-info">
-                        <h1>{props.temperature} <sup>o</sup> C , {type}</h1>
+                        <h1>{props.temperature}<sup>o</sup>C , {type}</h1>
                    
                        
                         </div>
@@ -76,7 +76,7 @@ const DisplayWeather = (props) => {
                             
 
                         
-                    
+                    <p className="disclaimer">Disclaimer: Not actual representation of current weather. </p>
                 </div> 
 
                    
